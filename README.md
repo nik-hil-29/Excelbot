@@ -184,55 +184,6 @@ excel-insights-chatbot/
 3. **Code Execution** → Plot creation → Display results
 4. **Error Recovery** → Fallback plots → User feedback
 
-## 🔧 Configuration
-
-### Environment Variables
-```bash
-GEMINI_API_KEY=your_gemini_api_key_here
-```
-
-### Streamlit Configuration
-Create `.streamlit/config.toml`:
-```toml
-[server]
-port = 8501
-enableCORS = true
-maxUploadSize = 200
-
-[theme]
-primaryColor = "#FF6B6B"
-backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#F0F2F6"
-```
-
-## 🚀 Deployment
-
-### Streamlit Cloud
-1. Push code to GitHub repository
-2. Connect repository to Streamlit Cloud
-3. Add `GEMINI_API_KEY` to app secrets
-4. Deploy automatically
-
-### Hugging Face Spaces
-1. Create new Streamlit Space
-2. Upload project files
-3. Add API key to Space secrets
-4. App deploys automatically
-
-### Local Docker (Optional)
-```dockerfile
-FROM python:3.9-slim
-
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-COPY . .
-EXPOSE 8501
-
-ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
-```
-
 ## 📊 Supported Analysis Types
 
 ### Statistical Operations
